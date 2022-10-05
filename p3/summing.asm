@@ -1,7 +1,7 @@
 ; TAHA TAS
 ; CSC 322 10/3/2022
 ; Project 3 - Summing Arrays
-; Etc...
+; Adds values from arrays
 
 SECTION .data
 ; define data/variables here.  Think DB, DW, DD, DQ
@@ -22,33 +22,41 @@ SECTION .text
 global _main
 _main:
 
-; put your code here.
+; bArraySum adding
 mov al, [bArray]
 add al, [bArray+1]
 add al, [bArray+2]
 add al, [bArray+3]
 add al, [bArray+4]
 mov [bArraySum], al
+alBreak:
 
+; wArraySum adding
 mov bx, [wArray]
 add bx, [wArray+1*2]
 add bx, [wArray+2*2]
 add bx, [wArray+3*2]
 add bx, [wArray+4*2]
 mov [wArraySum], bx
+bxBreak:
 
+; dArraySum adding
 mov ecx, [dArray]
 add ecx, [dArray+1*4]
 add ecx, [dArray+2*4]
 add ecx, [dArray+3*4]
 add ecx, [dArray+4*4]
 mov [dArraySum], ecx
+ecxBreak:
 
+; grandTotal adding
 movsx eax, al
 movsx ebx, bx
 mov [grandTotal], ecx
 add [grandTotal], eax
 add [grandTotal], ebx
+
+lastBreak:
 
 ; Normal termination code
 mov eax, 1
