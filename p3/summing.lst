@@ -55,7 +55,7 @@
     55                                  ; grandTotal adding
     56 00000070 0FBEC0                  movsx eax, al
     57 00000073 0FBFDB                  movsx ebx, bx
-    58 00000076 890D[2A000000]          mov [grandTotal], ecx
+    58 00000076 010D[2A000000]          add [grandTotal], ecx
     59 0000007C 0105[2A000000]          add [grandTotal], eax
     60 00000082 011D[2A000000]          add [grandTotal], ebx
     61                                  

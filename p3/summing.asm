@@ -50,9 +50,9 @@ mov [dArraySum], ecx
 ecxBreak:
 
 ; grandTotal adding
-movsx eax, al
+
 movsx ebx, bx
-mov [grandTotal], ecx
+add [grandTotal], ecx
 add [grandTotal], eax
 add [grandTotal], ebx
 
