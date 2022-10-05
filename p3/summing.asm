@@ -28,6 +28,7 @@ add al, [bArray+1]
 add al, [bArray+2]
 add al, [bArray+3]
 add al, [bArray+4]
+movsx eax, al
 mov [bArraySum], al
 alBreak:
 
@@ -37,6 +38,7 @@ add bx, [wArray+1*2]
 add bx, [wArray+2*2]
 add bx, [wArray+3*2]
 add bx, [wArray+4*2]
+movsx ebx, bx
 mov [wArraySum], bx
 bxBreak:
 
@@ -50,8 +52,6 @@ mov [dArraySum], ecx
 ecxBreak:
 
 ; grandTotal adding
-
-movsx ebx, bx
 add [grandTotal], ecx
 add [grandTotal], eax
 add [grandTotal], ebx

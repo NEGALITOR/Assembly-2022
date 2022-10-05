@@ -31,30 +31,30 @@
     31 0000000B 0205[02000000]          add al, [bArray+2]
     32 00000011 0205[03000000]          add al, [bArray+3]
     33 00000017 0205[04000000]          add al, [bArray+4]
-    34 0000001D A2[23000000]            mov [bArraySum], al
-    35                                  alBreak:
-    36                                  
-    37                                  ; wArraySum adding
-    38 00000022 668B1D[05000000]        mov bx, [wArray]
-    39 00000029 66031D[07000000]        add bx, [wArray+1*2]
-    40 00000030 66031D[09000000]        add bx, [wArray+2*2]
-    41 00000037 66031D[0B000000]        add bx, [wArray+3*2]
-    42 0000003E 66031D[0D000000]        add bx, [wArray+4*2]
-    43 00000045 66891D[24000000]        mov [wArraySum], bx
-    44                                  bxBreak:
-    45                                  
-    46                                  ; dArraySum adding
-    47 0000004C 8B0D[0F000000]          mov ecx, [dArray]
-    48 00000052 030D[13000000]          add ecx, [dArray+1*4]
-    49 00000058 030D[17000000]          add ecx, [dArray+2*4]
-    50 0000005E 030D[1B000000]          add ecx, [dArray+3*4]
-    51 00000064 030D[1F000000]          add ecx, [dArray+4*4]
-    52 0000006A 890D[26000000]          mov [dArraySum], ecx
-    53                                  ecxBreak:
-    54                                  
-    55                                  ; grandTotal adding
-    56 00000070 0FBEC0                  movsx eax, al
-    57 00000073 0FBFDB                  movsx ebx, bx
+    34 0000001D 0FBEC0                  movsx eax, al
+    35 00000020 A2[23000000]            mov [bArraySum], al
+    36                                  alBreak:
+    37                                  
+    38                                  ; wArraySum adding
+    39 00000025 668B1D[05000000]        mov bx, [wArray]
+    40 0000002C 66031D[07000000]        add bx, [wArray+1*2]
+    41 00000033 66031D[09000000]        add bx, [wArray+2*2]
+    42 0000003A 66031D[0B000000]        add bx, [wArray+3*2]
+    43 00000041 66031D[0D000000]        add bx, [wArray+4*2]
+    44 00000048 0FBFDB                  movsx ebx, bx
+    45 0000004B 66891D[24000000]        mov [wArraySum], bx
+    46                                  bxBreak:
+    47                                  
+    48                                  ; dArraySum adding
+    49 00000052 8B0D[0F000000]          mov ecx, [dArray]
+    50 00000058 030D[13000000]          add ecx, [dArray+1*4]
+    51 0000005E 030D[17000000]          add ecx, [dArray+2*4]
+    52 00000064 030D[1B000000]          add ecx, [dArray+3*4]
+    53 0000006A 030D[1F000000]          add ecx, [dArray+4*4]
+    54 00000070 890D[26000000]          mov [dArraySum], ecx
+    55                                  ecxBreak:
+    56                                  
+    57                                  ; grandTotal adding
     58 00000076 010D[2A000000]          add [grandTotal], ecx
     59 0000007C 0105[2A000000]          add [grandTotal], eax
     60 00000082 011D[2A000000]          add [grandTotal], ebx
