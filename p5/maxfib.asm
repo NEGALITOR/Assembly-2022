@@ -1,7 +1,7 @@
 ; TAHA TAS
 ; Program 5 - Max Fibonacci
 ; 10/17/2022
-; Etc...
+; Finds the max fibonacci number that can fit in a double word and stores it
 
 SECTION .data
 ; define data/variables here.  Think DB, DW, DD, DQ
@@ -21,8 +21,6 @@ mov ebx, 1
 
 inc WORD[FibCount]
 
-b1:
-
 startLoop:
 
 xchg eax, ebx
@@ -30,34 +28,10 @@ add ebx, eax
 inc WORD[FibCount]
 mov [MaxFib], ebx
 jc endLoop
-b2:
 
 jmp startLoop
 
-
 endLoop:
-
-
-
-;mov ebx, [FibCount]
-;b1:
-
-;mov eax, DWORD[MaxFib + ebx * 4]
-;b2:
-
-;dec ebx
-;b3:
-
-;add eax, DWORD[MaxFib + ebx * 4]
-;b4:
-
-;inc ebx
-;b5:
-
-;mov [FibCount], ebx
-
-;loop startLoop
-
 
 lastBreak:
 ; Normal termination code
