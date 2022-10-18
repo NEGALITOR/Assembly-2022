@@ -25,9 +25,10 @@ startLoop:
 
 xchg eax, ebx
 add ebx, eax
-inc WORD[FibCount]
 mov [MaxFib], ebx
 jc endLoop
+
+inc WORD[FibCount]
 
 jmp startLoop
 

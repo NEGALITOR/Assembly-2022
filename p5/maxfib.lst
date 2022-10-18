@@ -1,7 +1,7 @@
      1                                  ; TAHA TAS
      2                                  ; Program 5 - Max Fibonacci
      3                                  ; 10/17/2022
-     4                                  ; Etc...
+     4                                  ; Finds the max fibonacci number that can fit in a double word and stores it
      5                                  
      6                                  SECTION .data
      7                                  ; define data/variables here.  Think DB, DW, DD, DQ
@@ -21,46 +21,21 @@
     21                                  
     22 0000000A 66FF05[04000000]        inc WORD[FibCount]
     23                                  
-    24                                  b1:
+    24                                  startLoop:
     25                                  
-    26                                  startLoop:
-    27                                  
-    28 00000011 93                      xchg eax, ebx
-    29 00000012 01C3                    add ebx, eax
-    30 00000014 66FF05[04000000]        inc WORD[FibCount]
-    31 0000001B 891D[00000000]          mov [MaxFib], ebx
-    32 00000021 7202                    jc endLoop
-    33                                  b2:
+    26 00000011 93                      xchg eax, ebx
+    27 00000012 01C3                    add ebx, eax
+    28 00000014 891D[00000000]          mov [MaxFib], ebx
+    29 0000001A 7209                    jc endLoop
+    30                                  
+    31 0000001C 66FF05[04000000]        inc WORD[FibCount]
+    32                                  
+    33 00000023 EBEC                    jmp startLoop
     34                                  
-    35 00000023 EBEC                    jmp startLoop
+    35                                  endLoop:
     36                                  
-    37                                  
-    38                                  endLoop:
-    39                                  
-    40                                  
-    41                                  
-    42                                  ;mov ebx, [FibCount]
-    43                                  ;b1:
-    44                                  
-    45                                  ;mov eax, DWORD[MaxFib + ebx * 4]
-    46                                  ;b2:
-    47                                  
-    48                                  ;dec ebx
-    49                                  ;b3:
-    50                                  
-    51                                  ;add eax, DWORD[MaxFib + ebx * 4]
-    52                                  ;b4:
-    53                                  
-    54                                  ;inc ebx
-    55                                  ;b5:
-    56                                  
-    57                                  ;mov [FibCount], ebx
-    58                                  
-    59                                  ;loop startLoop
-    60                                  
-    61                                  
-    62                                  lastBreak:
-    63                                  ; Normal termination code
-    64 00000025 B801000000              mov eax, 1
-    65 0000002A BB00000000              mov ebx, 0
-    66 0000002F CD80                    int 80h
+    37                                  lastBreak:
+    38                                  ; Normal termination code
+    39 00000025 B801000000              mov eax, 1
+    40 0000002A BB00000000              mov ebx, 0
+    41 0000002F CD80                    int 80h
