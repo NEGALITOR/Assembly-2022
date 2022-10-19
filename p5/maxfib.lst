@@ -23,19 +23,20 @@
     23                                  
     24                                  startLoop:
     25                                  
-    26 00000011 93                      xchg eax, ebx
-    27 00000012 01C3                    add ebx, eax
-    28 00000014 891D[00000000]          mov [MaxFib], ebx
-    29 0000001A 7209                    jc endLoop
+    26 00000011 89D9                    mov ecx, ebx
+    27 00000013 93                      xchg ebx, eax
+    28 00000014 01C3                    add ebx, eax
+    29 00000016 720F                    jc endLoop
     30                                  
-    31 0000001C 66FF05[04000000]        inc WORD[FibCount]
-    32                                  
-    33 00000023 EBEC                    jmp startLoop
-    34                                  
-    35                                  endLoop:
-    36                                  
-    37                                  lastBreak:
-    38                                  ; Normal termination code
-    39 00000025 B801000000              mov eax, 1
-    40 0000002A BB00000000              mov ebx, 0
-    41 0000002F CD80                    int 80h
+    31 00000018 890D[00000000]          mov [MaxFib], ecx
+    32 0000001E 66FF05[04000000]        inc WORD[FibCount]
+    33                                  
+    34 00000025 EBEA                    jmp startLoop
+    35                                  
+    36                                  endLoop:
+    37                                  
+    38                                  lastBreak:
+    39                                  ; Normal termination code
+    40 00000027 B801000000              mov eax, 1
+    41 0000002C BB00000000              mov ebx, 0
+    42 00000031 CD80                    int 80h

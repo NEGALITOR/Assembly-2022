@@ -23,11 +23,12 @@ inc WORD[FibCount]
 
 startLoop:
 
-xchg eax, ebx
+mov ecx, ebx
+xchg ebx, eax
 add ebx, eax
-mov [MaxFib], ebx
 jc endLoop
 
+mov [MaxFib], ecx
 inc WORD[FibCount]
 
 jmp startLoop
