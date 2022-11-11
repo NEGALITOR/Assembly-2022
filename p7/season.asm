@@ -33,8 +33,6 @@ season: db 87,55,88,56,89,57,90,58,91,59,92,60,93,61,94,62,95,63,96,64,97,65,98,
 head:   dd 0
 tail:   dd 0
 
-red:    db 1bh, "[33m"  ;;; red foreground
-
 attrib: dd 1bh, 
         dd '[', 
         dd '3', 
