@@ -1,7 +1,7 @@
 ; TAHA TAS
 ; Program 7: The Autumn Season Cypher
 ; Nov 11, 2022
-; Etc...
+; Creates an image of a chili by decoding the season array
 
 SECTION .data
 
