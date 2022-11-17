@@ -1,7 +1,7 @@
 ; TAHA TAS
-; Assignment
+; Program 8: Reverse Array with a Proc
 ; Nov 18, 2022
-; Etc...
+; Reverses array by utilizing a macro procedure
 
 %macro ReverseArr 2
 
